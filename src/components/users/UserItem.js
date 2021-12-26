@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
 
 class UserItem extends Component {
-    constructor() {
-        super();
-        console.log('123');
-    }
-
     render() {
+        const { avatar_url, login, html_url } = this.props.user;
+
         return (
-            <div>
-              <h1>User Item</h1>  
+            <div className='card text-center'>
+                <img 
+                    src={avatar_url}
+                    className='round-img'
+                    style={{ width: '60px' }}
+                />
+                <h3>{login}</h3>
+                <div>
+                    <a href={html_url} className='btn btn-dark btn-sm my-1'>More</a>
+                </div>
             </div>
         )
     }
