@@ -35,31 +35,27 @@ const User = ({ match }) => {
 
     return (
         <Fragment>
-            <Link to='/' className='btn btn-light'>
-                Back to Search
-            </Link>
-            Hireable: {' '}
-            {hireable ? (
-                <i className='fas fa-check text-success' />
-            ) : (
-                <i className='fas fa-times-circle text-danger' />
-            )}
             <div className="card grid-2">
                 <div className="all-center">
                     <img src={avatar_url} className='round-img' alt='User Avatar' style={{width: '150px'}} />
                     <h1>{name}</h1>
                     <p>Location: {location}</p>
+                    <p>Hireable: {' '}
+                        {hireable ? (
+                            <i className='fas fa-check text-success' />
+                        ) : (
+                            <i className='fas fa-times-circle text-danger' />
+                        )}
+                    </p>
                 </div>
                 <div>
                     {bio && (
                         <Fragment>
                             <h3>Bio</h3>
                             <p>{bio}</p>
+                            <br />
                         </Fragment>
                     )}
-                    <a href={html_url} className='btn btn-dark my-1'>
-                        Visit Github Profile
-                    </a>
                     <ul>
                         <li>
                             {login && (
@@ -83,6 +79,13 @@ const User = ({ match }) => {
                             )}
                         </li>
                     </ul>
+                    <br />
+                    <Link to='/' className='btn btn-primary'>
+                        Back to Search
+                    </Link>
+                    <a href={html_url} className='btn btn-light my-1'>
+                        Visit Github Profile
+                    </a>
                 </div>
             </div>
             <div className="card text-center">
